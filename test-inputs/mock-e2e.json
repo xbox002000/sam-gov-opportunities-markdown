@@ -1,0 +1,11 @@
+{
+  "samApiKey": "TEST_KEY_NOT_REAL",
+  "postedFrom": "10/01/2026",
+  "postedTo": "10/05/2026",
+  "maxNotices": 2,
+  "keywords": "cloud",
+  "ptype": "o,k",
+  "fetchDescriptions": true,
+  "descriptionMaxChars": 400,
+  "maxRetries": 1
+}

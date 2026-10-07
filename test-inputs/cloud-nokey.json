@@ -1,0 +1,9 @@
+{
+  "daysBack": 3,
+  "maxNotices": 5,
+  "keywords": "information technology",
+  "ptype": "o,k",
+  "fetchDescriptions": false,
+  "maxRetries": 0,
+  "maxConcurrency": 1
+}

@@ -1,0 +1,13 @@
+{
+    "apify-actor-start": {
+        "eventTitle": "Actor start",
+        "eventDescription": "Charged once per run (Apify synthetic start event; priced per GB of run memory, 1 GB minimum). Target ~$0.001 for a typical 256 MB–1 GB start.",
+        "eventPriceUsd": 0.001
+    },
+    "opportunity-notice": {
+        "eventTitle": "Opportunity notice",
+        "eventDescription": "Charged once per SUCCESSFUL SAM.gov opportunity notice card (search or noticeId lookup returned a notice, Markdown card written). Includes title, agency, NAICS, dates, award/value if present, uiLink, description excerpt, and inclusion in REPORT.md. Failures (missing/invalid key → 404, not found, rate limit after retries, 5xx, empty search) are free.",
+        "eventPriceUsd": 0.003,
+        "isPrimaryEvent": true
+    }
+}

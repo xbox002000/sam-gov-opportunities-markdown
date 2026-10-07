@@ -1,0 +1,147 @@
+{
+  "totalRecords": 2,
+  "limit": 2,
+  "offset": 0,
+  "opportunitiesData": [
+    {
+      "noticeId": "5b345bbb7127b91a3ad577b203fc6f68",
+      "title": "Historic Office Renovation ",
+      "solicitationNumber": " 47PF0018R0023 ",
+      "fullParentPathName": "GENERAL SERVICES ADMINISTRATION.PUBLIC BUILDINGS SERVICE.PBS R5",
+      "fullParentPathCode": "047.47Q.47Q05A",
+      "postedDate": "2018-05-04",
+      "type": "Award Notice",
+      "baseType": "Combined Synopsis/Solicitation",
+      "archiveType": "manual",
+      "archiveDate": null,
+      "typeOfSetAsideDescription": null,
+      "typeOfSetAside": null,
+      "responseDeadLine": null,
+      "naicsCode": "236220",
+      "classificationCode": "Z",
+      "active": "Yes",
+      "award": {
+        "date": "2018-05-04",
+        "number": "47PF0018C0066",
+        "amount": "800620",
+        "awardee": {
+          "name": "D.G. Beyer, Inc.",
+          "location": {
+            "streetAddress": "3080 S Calhoun Rd.",
+            "city": {
+              "code": "56375",
+              "name": "New Berlin"
+            },
+            "state": {
+              "code": "WI"
+            },
+            "zip": "53151",
+            "country": {
+              "code": "USA"
+            }
+          },
+          "ueiSAM": "025114695AST"
+        }
+      },
+      "pointOfContact": [
+        {
+          "fax": null,
+          "type": "primary",
+          "email": "jesse.jones@gsa.gov",
+          "phone": "2174941263",
+          "title": "Contracting Officer ",
+          "fullName": "Jesse L. Jones"
+        }
+      ],
+      "description": "https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=5b345bbb7127b91a3ad577b203fc6f68",
+      "organizationType": "OFFICE",
+      "officeAddress": {
+        "zipcode": "60604",
+        "city": "CHICAGO",
+        "countryCode": "USA",
+        "state": "IL"
+      },
+      "placeOfPerformance": {
+        "streetAddress": "517 E Wisconsin Ave",
+        "city": {
+          "code": "53000",
+          "name": "Milwaukee"
+        },
+        "state": {
+          "code": "WI"
+        },
+        "zip": "53202",
+        "country": {
+          "code": "USA"
+        }
+      },
+      "additionalInfoLink": null,
+      "uiLink": "https://sam.gov/opp/5b345bbb7127b91a3ad577b203fc6f68/view",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.sam.gov/opportunities/v2/search?noticeid=5b345bbb7127b91a3ad577b203fc6f68&limit=1"
+        }
+      ],
+      "resourceLinks": null
+    },
+    {
+      "fullParentPathName": "GENERAL SERVICES ADMINISTRATION.PUBLIC BUILDINGS SERVICE.PBS R5",
+      "fullParentPathCode": "047.47Q.47Q05A",
+      "postedDate": "2026-10-01",
+      "type": "Solicitation",
+      "baseType": "Solicitation",
+      "archiveType": "manual",
+      "archiveDate": null,
+      "typeOfSetAsideDescription": null,
+      "typeOfSetAside": null,
+      "responseDeadLine": "2026-10-20T17:00:00-04:00",
+      "classificationCode": "Z",
+      "active": "Yes",
+      "description": "https://api.sam.gov/prod/opportunities/v1/noticedesc?noticeid=ff826a59eac743c4a1a07ff5e0cf3e3a",
+      "organizationType": "OFFICE",
+      "officeAddress": {
+        "zipcode": "60604",
+        "city": "CHICAGO",
+        "countryCode": "USA",
+        "state": "IL"
+      },
+      "placeOfPerformance": {
+        "streetAddress": "517 E Wisconsin Ave",
+        "city": {
+          "code": "53000",
+          "name": "Milwaukee"
+        },
+        "state": {
+          "code": "WI"
+        },
+        "zip": "53202",
+        "country": {
+          "code": "USA"
+        }
+      },
+      "additionalInfoLink": null,
+      "uiLink": "https://sam.gov/opp/ff826a59eac743c4a1a07ff5e0cf3e3a/view",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://api.sam.gov/opportunities/v2/search?noticeid=5b345bbb7127b91a3ad577b203fc6f68&limit=1"
+        }
+      ],
+      "resourceLinks": null,
+      "noticeId": "ff826a59eac743c4a1a07ff5e0cf3e3a",
+      "title": "Cloud hosting services \u2014 call jesse.jones@gsa.gov or 202-555-0100",
+      "solicitationNumber": "TEST-IT-001",
+      "naicsCode": "541512",
+      "award": null,
+      "pointOfContact": [
+        {
+          "email": "leak@example.com",
+          "phone": "2025550199",
+          "fullName": "Should Not Appear"
+        }
+      ]
+    }
+  ],
+  "links": []
+}

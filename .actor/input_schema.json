@@ -1,0 +1,158 @@
+{
+  "title": "SAM.gov Opportunities → Markdown input",
+  "description": "Search U.S. federal contract opportunities via the official SAM.gov Opportunities API v2 (https://api.sam.gov/opportunities/v2/search). Bring your own free public API key — without one the API returns HTTP 404 and those rows are free. No HTML scrape. POC emails/phones are never exported.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "samApiKey": {
+      "title": "SAM.gov public API key (required for live data)",
+      "type": "string",
+      "description": "Your free SAM.gov Public API Key. Get it: sign in at https://sam.gov/ → Account Details → Public API Key (or see https://open.gsa.gov/api/get-opportunities-public-api/). Passed as the api_key query parameter. WITHOUT a key the API returns HTTP 404 — those rows are marked failed and NOT charged. Stored encrypted; never logged. The publisher does not buy or host a SAM key.",
+      "editor": "textfield",
+      "isSecret": true,
+      "sectionCaption": "SAM.gov API"
+    },
+    "keywords": {
+      "title": "Keywords (title filter)",
+      "type": "string",
+      "description": "Passed to the official title query parameter (substring match on opportunity title).",
+      "editor": "textfield",
+      "prefill": "information technology",
+      "sectionCaption": "Search"
+    },
+    "postedFrom": {
+      "title": "Posted from (MM/dd/yyyy)",
+      "type": "string",
+      "description": "Start of posted-date window. Format MM/dd/yyyy (SAM requirement). Max span with postedTo is 1 year. If omitted, computed from daysBack.",
+      "editor": "textfield",
+      "sectionCaption": "Date window"
+    },
+    "postedTo": {
+      "title": "Posted to (MM/dd/yyyy)",
+      "type": "string",
+      "description": "End of posted-date window. Format MM/dd/yyyy. Defaults to today (UTC).",
+      "editor": "textfield"
+    },
+    "daysBack": {
+      "title": "Days back (if postedFrom omitted)",
+      "type": "integer",
+      "description": "When postedFrom is empty, search the last N days ending at postedTo/today. Max 365.",
+      "default": 7,
+      "prefill": 7,
+      "minimum": 1,
+      "maximum": 365
+    },
+    "ncode": {
+      "title": "NAICS code (ncode)",
+      "type": "string",
+      "description": "Official ncode filter — up to 6 digits (e.g. 541512).",
+      "editor": "textfield",
+      "sectionCaption": "Filters"
+    },
+    "ptype": {
+      "title": "Procurement type (ptype)",
+      "type": "string",
+      "description": "Official ptype code(s), comma-separated. o=Solicitation, p=Presolicitation, k=Combined synopsis/solicitation, r=Sources sought, s=Special notice, a=Award notice, u=Justification (J&A), g=Sale of surplus, i=Intent to bundle.",
+      "editor": "textfield",
+      "prefill": "o,k"
+    },
+    "organizationName": {
+      "title": "Organization / agency name",
+      "type": "string",
+      "description": "Official organizationName filter (department or sub-tier keyword).",
+      "editor": "textfield"
+    },
+    "solnum": {
+      "title": "Solicitation number",
+      "type": "string",
+      "description": "Official solnum filter.",
+      "editor": "textfield"
+    },
+    "noticeIds": {
+      "title": "Notice ID list (optional direct lookup)",
+      "type": "array",
+      "description": "Optional. When set, each noticeId is fetched via the official noticeid parameter (still requires postedFrom/postedTo window). Overrides keyword search.",
+      "editor": "stringList",
+      "sectionCaption": "Direct lookup"
+    },
+    "state": {
+      "title": "Place of performance state",
+      "type": "string",
+      "description": "Two-letter US state code (official state filter), e.g. VA.",
+      "editor": "textfield",
+      "sectionCaption": "Filters"
+    },
+    "typeOfSetAside": {
+      "title": "Set-aside code",
+      "type": "string",
+      "description": "Official typeOfSetAside (e.g. SBA, 8A, HZC, SDVOSBC, WOSB). See open.gsa.gov docs.",
+      "editor": "textfield"
+    },
+    "status": {
+      "title": "Opportunity status",
+      "type": "string",
+      "description": "active | inactive | archived | cancelled | deleted (when supported by SAM).",
+      "editor": "select",
+      "enum": ["", "active", "inactive", "archived", "cancelled", "deleted"],
+      "enumTitles": ["(default)", "Active", "Inactive", "Archived", "Cancelled", "Deleted"],
+      "default": ""
+    },
+    "maxNotices": {
+      "title": "Max notices",
+      "type": "integer",
+      "description": "Stop after this many successful notice cards.",
+      "default": 50,
+      "prefill": 10,
+      "minimum": 1,
+      "maximum": 1000,
+      "sectionCaption": "Limits"
+    },
+    "pageSize": {
+      "title": "Page size (limit per API call)",
+      "type": "integer",
+      "description": "Official limit per page (max 1000). Pagination uses offset+=page.",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel description fetches / noticeId lookups. SAM rate-limits; 2 is usually safe.",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 5
+    },
+    "maxRetries": {
+      "title": "Max retries",
+      "type": "integer",
+      "description": "Retries for HTTP 429 (honours Retry-After), 5xx and timeouts. 400/401/403/404 (incl. missing key) are not retried.",
+      "default": 3,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "requestTimeoutSecs": {
+      "title": "Request timeout (seconds)",
+      "type": "integer",
+      "description": "Timeout for each SAM.gov API call.",
+      "default": 30,
+      "minimum": 5,
+      "maximum": 120
+    },
+    "fetchDescriptions": {
+      "title": "Fetch description text",
+      "type": "boolean",
+      "description": "When true, follow the official noticedesc URL for a short description excerpt (emails/phones scrubbed). Extra API calls count against your SAM daily quota.",
+      "default": true,
+      "sectionCaption": "Markdown"
+    },
+    "descriptionMaxChars": {
+      "title": "Description excerpt max chars",
+      "type": "integer",
+      "description": "Truncate description excerpt. 0 skips description body even if fetchDescriptions is true.",
+      "default": 800,
+      "minimum": 0,
+      "maximum": 5000
+    }
+  }
+}

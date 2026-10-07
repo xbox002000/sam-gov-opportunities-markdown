@@ -1,0 +1,28 @@
+{
+  "actorSpecification": 1,
+  "name": "sam-gov-opportunities-markdown",
+  "title": "SAM.gov Opportunities \u2192 Markdown Notice Cards",
+  "description": "Search U.S. federal contract opportunities via the official SAM.gov Opportunities API v2. Markdown notice cards (agency, NAICS, dates, value, link). Bring your own free public API key. No HTML scrape, no POC email/phone. Failures free. 256 MB.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 1024,
+  "defaultRunOptions": {
+    "build": "latest",
+    "memoryMbytes": 256,
+    "timeoutSecs": 3600
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "changelog": "../CHANGELOG.md",
+  "categories": [
+    "BUSINESS",
+    "DEVELOPER_TOOLS",
+    "AUTOMATION"
+  ]
+}

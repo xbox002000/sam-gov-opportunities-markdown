@@ -1,0 +1,31 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "SAM.gov Opportunities → Markdown output",
+  "description": "One dataset item per notice, plus REPORT.md, REPORT.json and SUMMARY in the default key-value store. Never includes POC email or phone.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Opportunity notices",
+      "description": "Dataset items: noticeId, title, agency, NAICS, type, postedDate, responseDeadline, award/value, uiLink, descriptionExcerpt, markdown, errorClass.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "reportMarkdown": {
+      "type": "string",
+      "title": "Markdown report (REPORT.md)",
+      "description": "Summary table plus one Markdown notice card per opportunity. No POC contacts.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/REPORT.md"
+    },
+    "reportJson": {
+      "type": "string",
+      "title": "JSON summary (REPORT.json)",
+      "description": "Compact JSON of notice cards (same fields as dataset, no contact fields).",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/REPORT.json"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Run summary (SUMMARY)",
+      "description": "noticesOk, noticesFailed, byClass, apiKeyProvided, keyHint, charged, durationSecs, peakMemoryMb.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/SUMMARY"
+    }
+  }
+}

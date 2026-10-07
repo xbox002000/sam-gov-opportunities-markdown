@@ -1,0 +1,8 @@
+{
+  "daysBack": 7,
+  "maxNotices": 3,
+  "keywords": "software",
+  "ptype": "o",
+  "fetchDescriptions": false,
+  "maxRetries": 0
+}

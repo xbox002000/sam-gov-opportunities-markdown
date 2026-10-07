@@ -1,0 +1,46 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": ["noticeId", "title", "agency", "naicsCode", "type", "postedDate", "responseDeadline", "awardAmount", "status", "errorClass", "uiLink"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "noticeId": { "label": "Notice ID", "format": "text" },
+          "title": { "label": "Title", "format": "text" },
+          "agency": { "label": "Agency", "format": "text" },
+          "naicsCode": { "label": "NAICS", "format": "text" },
+          "type": { "label": "Type", "format": "text" },
+          "postedDate": { "label": "Posted", "format": "text" },
+          "responseDeadline": { "label": "Deadline", "format": "text" },
+          "awardAmount": { "label": "Award $", "format": "number" },
+          "status": { "label": "Result", "format": "text" },
+          "errorClass": { "label": "Error", "format": "text" },
+          "uiLink": { "label": "SAM link", "format": "link" }
+        }
+      }
+    },
+    "failed": {
+      "title": "Failed (not charged)",
+      "transformation": {
+        "fields": ["noticeId", "title", "errorClass", "httpStatus", "attempts", "errorMessage", "hint"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "noticeId": { "label": "Notice ID", "format": "text" },
+          "title": { "label": "Title", "format": "text" },
+          "errorClass": { "label": "Error", "format": "text" },
+          "httpStatus": { "label": "HTTP", "format": "number" },
+          "attempts": { "label": "Attempts", "format": "number" },
+          "errorMessage": { "label": "Message", "format": "text" },
+          "hint": { "label": "Hint", "format": "text" }
+        }
+      }
+    }
+  }
+}
